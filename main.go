@@ -20,14 +20,6 @@ var left_shore = []string{chicken, fox, grain, hs}
 var right_shore = []string{}
 var boat = []string{}
 
-func ViewStates() string {
-	fmt.Println("\nNåværende tilstand:")
-	fmt.Println("Til venstre er: ", left_shore)
-	fmt.Println("Og i båten er: ", boat)
-	fmt.Println("Til høyre er: ", right_shore)
-	return ""
-}
-
 func ChangeState(userinput string) {
 	var numchar = len(strings.Fields(userinput))
 

@@ -1,2 +1,4 @@
 github.com/theodoruia/rivercrossing/addremove v0.0.0-20220125184602-748821d173ce h1:zV475TAzDHhRjwwehO2wwXf7FoZ8fRBoCiZkbnZMnYs=
 github.com/theodoruia/rivercrossing/addremove v0.0.0-20220125184602-748821d173ce/go.mod h1:9EhAqMhhQF6a8yuliF1ZogZIiUxldD6K4DOuFgiJFmc=
+github.com/theodoruia/rivercrossing/state v0.0.0-20220125185918-6ef5e961f347 h1:09XcOBiz5qvpzU+UCY/6k7BjKTCqqw8H2mf1EoFdpb0=
+github.com/theodoruia/rivercrossing/state v0.0.0-20220125185918-6ef5e961f347/go.mod h1:HF2p+Y4QmArkKBeHImW6InB4qn8/5x7yA28xEQGJjYo=
