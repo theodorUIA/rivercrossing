@@ -5,6 +5,8 @@ import (
 	"fmt"
 	"os"
 	"strings"
+
+	"github.com/theodoruia/rivercrossing/addremove"
 )
 
 //Globale variabler
@@ -48,9 +50,9 @@ func ChangeState(userinput string) {
 
 	switch state {
 	case "venstre båt": //source target
-		if Contains(left_shore, item) {
-			left_shore = Remove(left_shore, item) //Fjerner item fra source
-			boat = Add(boat, item)                //Legger item til target
+		if addremove.Contains(left_shore, item) {
+			left_shore = addremove.Remove(left_shore, item) //Fjerner item fra source
+			boat = addremove.Add(boat, item)                //Legger item til target
 			fmt.Println(item + "er fjernet fra " + source + " og legges til " + target)
 			fmt.Println(ViewState())
 
@@ -58,9 +60,9 @@ func ChangeState(userinput string) {
 			fmt.Println(item + " er ikke til " + source + "..")
 		}
 	case "båt venstre": //source target
-		if Contains(boat, item) {
-			boat = Remove(boat, item)          //Fjerner item fra source
-			left_shore = Add(left_shore, item) //Legger item til target
+		if addremove.Contains(boat, item) {
+			boat = addremove.Remove(boat, item)          //Fjerner item fra source
+			left_shore = addremove.Add(left_shore, item) //Legger item til target
 			fmt.Println(item + "er fjernet fra " + source + " og legges til " + target)
 			fmt.Println(ViewState())
 
@@ -68,9 +70,9 @@ func ChangeState(userinput string) {
 			fmt.Println(item + " er ikke til " + source + "..")
 		}
 	case "båt høyre": //source target
-		if Contains(boat, item) {
-			boat = Remove(boat, item)            //Fjerner item fra source
-			right_shore = Add(right_shore, item) //Legger item til target
+		if addremove.Contains(boat, item) {
+			boat = addremove.Remove(boat, item)            //Fjerner item fra source
+			right_shore = addremove.Add(right_shore, item) //Legger item til target
 			fmt.Println(item + "er fjernet fra " + source + " og legges til " + target)
 			fmt.Println(ViewState())
 
@@ -78,9 +80,9 @@ func ChangeState(userinput string) {
 			fmt.Println(item + " er ikke til " + source + "..")
 		}
 	case "høyre båt": //source target
-		if Contains(right_shore, item) {
-			right_shore = Remove(right_shore, item) //Fjerner item fra source
-			boat = Add(boat, item)                  //Legger item til target
+		if addremove.Contains(right_shore, item) {
+			right_shore = addremove.Remove(right_shore, item) //Fjerner item fra source
+			boat = addremove.Add(boat, item)                  //Legger item til target
 			fmt.Println(item + "er fjernet fra " + source + " og legges til " + target)
 			fmt.Println(ViewState())
 
@@ -90,29 +92,6 @@ func ChangeState(userinput string) {
 	default:
 		fmt.Println("Du kan skrive 'Kylling fra venstre til båt' eller 'Kylling fra båt til venstre'")
 	}
-}
-
-func Contains(s []string, e string) bool {
-	for _, a := range s {
-		if a == e {
-			return true
-		}
-	}
-	return false
-}
-
-func Remove(s []string, r string) []string {
-	for i, v := range s {
-		if v == r {
-			return append(s[:i], s[i+1:]...)
-		}
-	}
-	return s
-}
-
-func Add(s []string, r string) []string {
-	s = append(s, r)
-	return s
 }
 
 func main() {
