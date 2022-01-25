@@ -1,6 +1,8 @@
 package state
 
-import "fmt"
+import (
+	"fmt"
+)
 
 func PrintState(left []string, right []string, boat []string) string {
 	fmt.Println("\nNåværende tilstand:")
@@ -8,7 +10,4 @@ func PrintState(left []string, right []string, boat []string) string {
 	fmt.Println("Og i båten er: ", boat)
 	fmt.Println("Til høyre er: ", right)
 	return ""
-}
-func ViewState() string {
-	return left_shore
 }

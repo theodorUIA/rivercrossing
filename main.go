@@ -49,7 +49,7 @@ func ChangeState(userinput string) {
 			left_shore = addremove.Remove(left_shore, item) //Fjerner item fra source
 			boat = addremove.Add(boat, item)                //Legger item til target
 			fmt.Println(item + "er fjernet fra " + source + " og legges til " + target)
-			fmt.Println(state.ViewState(left_shore, right_shore, boat))
+			fmt.Println(state.PrintState(left_shore, right_shore, boat))
 
 		} else {
 			fmt.Println(item + " er ikke til " + source + "..")
@@ -59,7 +59,7 @@ func ChangeState(userinput string) {
 			boat = addremove.Remove(boat, item)          //Fjerner item fra source
 			left_shore = addremove.Add(left_shore, item) //Legger item til target
 			fmt.Println(item + "er fjernet fra " + source + " og legges til " + target)
-			fmt.Println(state.ViewState(left_shore, right_shore, boat))
+			fmt.Println(state.PrintState(left_shore, right_shore, boat))
 
 		} else {
 			fmt.Println(item + " er ikke til " + source + "..")
@@ -69,7 +69,7 @@ func ChangeState(userinput string) {
 			boat = addremove.Remove(boat, item)            //Fjerner item fra source
 			right_shore = addremove.Add(right_shore, item) //Legger item til target
 			fmt.Println(item + "er fjernet fra " + source + " og legges til " + target)
-			fmt.Println(state.ViewState(left_shore, right_shore, boat))
+			fmt.Println(state.PrintState(left_shore, right_shore, boat))
 
 		} else {
 			fmt.Println(item + " er ikke til " + source + "..")
@@ -79,7 +79,7 @@ func ChangeState(userinput string) {
 			right_shore = addremove.Remove(right_shore, item) //Fjerner item fra source
 			boat = addremove.Add(boat, item)                  //Legger item til target
 			fmt.Println(item + "er fjernet fra " + source + " og legges til " + target)
-			fmt.Println(state.ViewState(left_shore, right_shore, boat))
+			fmt.Println(state.PrintState(left_shore, right_shore, boat))
 
 		} else {
 			fmt.Println(item + " er ikke til " + source + "..")
@@ -92,7 +92,7 @@ func ChangeState(userinput string) {
 func main() {
 	var helpmsg = ("#######################################################################################################\n#                                VELKOMMEN TIL RIVERCROSSING!                                         #\n#                                                                                                     #\n# Målet med spillet er å flytte alle fra venstre til høyre med kommandoer.                            #\n#                                                                                                     #\n# Du kan skrive f.eks 'Kylling fra venstre til båt' for å flytte kylling fra venstre side oppi båten. #\n#                                                                                                     #\n# Du kan ikke flytte ting fra venstre til høyre uten å være innom båten.                              #\n# Så kommandoen 'Mann fra venstre til høyre' vil være ugyldig.                                        #\n#                                                                                                     #\n# Du kan alltid skrive 'hjelp' for hjelp eller 'state' for nåværende tilstand.                         #\n#                                                                                                     #\n#                          Dagens sitat: '" + myqoute.GetQuote() + "'                    #\n#######################################################################################################")
 	fmt.Println(helpmsg)
-	fmt.Println(state.ViewState(left_shore, right_shore, boat))
+	fmt.Println(state.PrintState(left_shore, right_shore, boat))
 
 	userinput := bufio.NewScanner(os.Stdin)
 	for {
@@ -102,7 +102,7 @@ func main() {
 		if text == "hjelp" {
 			fmt.Println(helpmsg)
 		} else if text == "state" {
-			state.ViewState(left_shore, right_shore, boat)
+			state.PrintState(left_shore, right_shore, boat)
 		} else {
 			if len(text) != 0 {
 				//fmt.Println(text)
