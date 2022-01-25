@@ -7,6 +7,8 @@ import (
 	"strings"
 
 	"github.com/theodoruia/rivercrossing/addremove"
+
+	"github.com/theodoruia/rivercrossing/state"
 )
 
 //Globale variabler
@@ -18,7 +20,7 @@ var left_shore = []string{chicken, fox, grain, hs}
 var right_shore = []string{}
 var boat = []string{}
 
-func ViewState() string {
+func ViewStates() string {
 	fmt.Println("\nNåværende tilstand:")
 	fmt.Println("Til venstre er: ", left_shore)
 	fmt.Println("Og i båten er: ", boat)
@@ -41,20 +43,20 @@ func ChangeState(userinput string) {
 	var item = split[0]
 	var source = split[2]
 	var target = split[4]
-	var state = source + " " + target
+	var currentState = source + " " + target
 
 	//Bruker skriver: Kylling fra venstre til båt
 	//Item = kylling
 	//Source = venstre
 	//Target = båt
 
-	switch state {
+	switch currentState {
 	case "venstre båt": //source target
 		if addremove.Contains(left_shore, item) {
 			left_shore = addremove.Remove(left_shore, item) //Fjerner item fra source
 			boat = addremove.Add(boat, item)                //Legger item til target
 			fmt.Println(item + "er fjernet fra " + source + " og legges til " + target)
-			fmt.Println(ViewState())
+			fmt.Println(state.ViewState(left_shore, right_shore, boat))
 
 		} else {
 			fmt.Println(item + " er ikke til " + source + "..")
@@ -64,7 +66,7 @@ func ChangeState(userinput string) {
 			boat = addremove.Remove(boat, item)          //Fjerner item fra source
 			left_shore = addremove.Add(left_shore, item) //Legger item til target
 			fmt.Println(item + "er fjernet fra " + source + " og legges til " + target)
-			fmt.Println(ViewState())
+			fmt.Println(state.ViewState(left_shore, right_shore, boat))
 
 		} else {
 			fmt.Println(item + " er ikke til " + source + "..")
@@ -74,7 +76,7 @@ func ChangeState(userinput string) {
 			boat = addremove.Remove(boat, item)            //Fjerner item fra source
 			right_shore = addremove.Add(right_shore, item) //Legger item til target
 			fmt.Println(item + "er fjernet fra " + source + " og legges til " + target)
-			fmt.Println(ViewState())
+			fmt.Println(state.ViewState(left_shore, right_shore, boat))
 
 		} else {
 			fmt.Println(item + " er ikke til " + source + "..")
@@ -84,7 +86,7 @@ func ChangeState(userinput string) {
 			right_shore = addremove.Remove(right_shore, item) //Fjerner item fra source
 			boat = addremove.Add(boat, item)                  //Legger item til target
 			fmt.Println(item + "er fjernet fra " + source + " og legges til " + target)
-			fmt.Println(ViewState())
+			fmt.Println(state.ViewState(left_shore, right_shore, boat))
 
 		} else {
 			fmt.Println(item + " er ikke til " + source + "..")
@@ -96,7 +98,7 @@ func ChangeState(userinput string) {
 
 func main() {
 	fmt.Println("########################################################### \n# Målet med spillet er å flytte alle fra venstre til høyre med kommandoer. \n#\n# Du kan skrive f.eks 'Kylling fra venstre til båt' for å flytte kylling fra venstre side oppi båten. \n# \n# Du kan ikke flytte ting fra venstre til høyre uten å være innom båten. Så kommandoen 'Mann fra venstre til høyre' vil være ugyldig. \n#\n# Du kan alltid skrive 'help' for hjelp eller 'state' for nåværende tilstand. \n###########################################################")
-	fmt.Println(ViewState())
+	fmt.Println(state.ViewState(left_shore, right_shore, boat))
 
 	userinput := bufio.NewScanner(os.Stdin)
 	for {
@@ -106,7 +108,7 @@ func main() {
 		if text == "help" {
 			fmt.Println("########################################################### \n# Målet med spillet er å flytte alle fra venstre til høyre med kommandoer. \n#\n# Du kan skrive f.eks 'Kylling fra venstre til båt' for å flytte kylling fra venstre side oppi båten. \n# \n# Du kan ikke flytte ting fra venstre til høyre uten å være innom båten. Så kommandoen 'Mann fra venstre til høyre' vil være ugyldig. \n#\n# Du kan alltid skrive 'help' for hjelp eller 'state' for nåværende tilstand. \n###########################################################")
 		} else if text == "state" {
-			ViewState()
+			state.ViewState(left_shore, right_shore, boat)
 		} else {
 			if len(text) != 0 {
 				//fmt.Println(text)
