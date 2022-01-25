@@ -5,7 +5,7 @@ go 1.17
 require (
 	github.com/theodoruia/myqoute v0.0.0-20220125195310-8db66bc2dc7a
 	github.com/theodoruia/rivercrossing/addremove v0.0.0-20220125201454-272b491b9cc6
-	github.com/theodoruia/rivercrossing/state v0.0.0-20220125204120-103a6f6cd285
+	github.com/theodoruia/rivercrossing/state v0.0.0-20220125213416-9a6b3e6deddc
 )
 
 require (
