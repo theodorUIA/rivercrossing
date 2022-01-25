@@ -28,8 +28,13 @@ func ChangeState(userinput string) {
 		fmt.Println("Du må skrive inn 5 ord. Skriv 'hjelp' for hjelp.")
 		return
 	}
-
+	//setter brukerinput til små bokstaver
 	userinput = strings.ToLower(userinput)
+
+	if userinput == "kryss" {
+		state.CheckBoatContent(boat)
+	}
+
 	//split userinput
 	split := strings.Split(userinput, " ")
 

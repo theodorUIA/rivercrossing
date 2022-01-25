@@ -11,3 +11,11 @@ func PrintState(left []string, right []string, boat []string) string {
 	fmt.Println("Til høyre er: ", right)
 	return ""
 }
+
+func CheckBoatContent(boat []string) string {
+	if len(boat) == 0 {
+		return "båten er tom"
+	} else {
+		return "båten er ikke tom"
+	}
+}
