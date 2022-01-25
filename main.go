@@ -8,6 +8,7 @@ import (
 
 	"github.com/theodoruia/rivercrossing/addremove"
 
+	"github.com/theodoruia/myqoute"
 	"github.com/theodoruia/rivercrossing/state"
 )
 
@@ -89,7 +90,7 @@ func ChangeState(userinput string) {
 }
 
 func main() {
-	fmt.Println("########################################################### \n# Målet med spillet er å flytte alle fra venstre til høyre med kommandoer. \n#\n# Du kan skrive f.eks 'Kylling fra venstre til båt' for å flytte kylling fra venstre side oppi båten. \n# \n# Du kan ikke flytte ting fra venstre til høyre uten å være innom båten. Så kommandoen 'Mann fra venstre til høyre' vil være ugyldig. \n#\n# Du kan alltid skrive 'help' for hjelp eller 'state' for nåværende tilstand. \n###########################################################")
+	fmt.Println("#######################################################################################################\n#                                VELKOMMEN TIL RIVERCROSSING!                                         #\n#                                                                                                     #\n# Målet med spillet er å flytte alle fra venstre til høyre med kommandoer.                            #\n#                                                                                                     #\n# Du kan skrive f.eks 'Kylling fra venstre til båt' for å flytte kylling fra venstre side oppi båten. #\n#                                                                                                     #\n# Du kan ikke flytte ting fra venstre til høyre uten å være innom båten.                              #\n# Så kommandoen 'Mann fra venstre til høyre' vil være ugyldig.                                        #\n#                                                                                                     #\n# Du kan alltid skrive 'help' for hjelp eller 'state' for nåværende tilstand.                         #\n#                                                                                                     #\n#                          Dagens sitat: '" + myqoute.GetQuote() + "'                                 #\n#######################################################################################################")
 	fmt.Println(state.ViewState(left_shore, right_shore, boat))
 
 	userinput := bufio.NewScanner(os.Stdin)

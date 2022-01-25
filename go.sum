@@ -1,4 +1,12 @@
+github.com/theodoruia/myqoute v0.0.0-20220125195310-8db66bc2dc7a h1:VmV68YIOQ2/N5cNR5zs/Gyy5mSyQv2z7uDIf033WGpM=
+github.com/theodoruia/myqoute v0.0.0-20220125195310-8db66bc2dc7a/go.mod h1:lbPYKD7C+85SkxcGkwXKwbTfV7Vh7McvHhSOn6kXUqU=
 github.com/theodoruia/rivercrossing/addremove v0.0.0-20220125184602-748821d173ce h1:zV475TAzDHhRjwwehO2wwXf7FoZ8fRBoCiZkbnZMnYs=
 github.com/theodoruia/rivercrossing/addremove v0.0.0-20220125184602-748821d173ce/go.mod h1:9EhAqMhhQF6a8yuliF1ZogZIiUxldD6K4DOuFgiJFmc=
 github.com/theodoruia/rivercrossing/state v0.0.0-20220125185918-6ef5e961f347 h1:09XcOBiz5qvpzU+UCY/6k7BjKTCqqw8H2mf1EoFdpb0=
 github.com/theodoruia/rivercrossing/state v0.0.0-20220125185918-6ef5e961f347/go.mod h1:HF2p+Y4QmArkKBeHImW6InB4qn8/5x7yA28xEQGJjYo=
+golang.org/x/text v0.0.0-20170915032832-14c0d48ead0c h1:qgOY6WgZOaTkIIMiVjBQcw93ERBE4m30iBm00nkL0i8=
+golang.org/x/text v0.0.0-20170915032832-14c0d48ead0c/go.mod h1:NqM8EUOU14njkJ3fqMW+pc6Ldnwhi/IjpwHt7yyuwOQ=
+rsc.io/quote v1.5.2 h1:w5fcysjrx7yqtD/aO+QwRjYZOKnaM9Uh2b40tElTs3Y=
+rsc.io/quote v1.5.2/go.mod h1:LzX7hefJvL54yjefDEDHNONDjII0t9xZLPXsUe+TKr0=
+rsc.io/sampler v1.3.0 h1:7uVkIFmeBqHfdjD+gZwtXXI+RODJ2Wc4O7MPEh/QiW4=
+rsc.io/sampler v1.3.0/go.mod h1:T1hPZKmBbMNahiBKFy5HrXp6adAjACjK9JXDnKaTXpA=
