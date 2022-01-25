@@ -7,9 +7,9 @@ import (
 	"strings"
 
 	"github.com/theodoruia/rivercrossing/addremove"
+	"github.com/theodoruia/rivercrossing/state"
 
 	"github.com/theodoruia/myqoute"
-	"github.com/theodoruia/rivercrossing/state"
 )
 
 //Globale variabler
@@ -32,7 +32,7 @@ func ChangeState(userinput string) {
 	userinput = strings.ToLower(userinput)
 
 	if userinput == "kryss" {
-		state.CheckBoatContent(boat)
+		fmt.Println(state.CheckBoatContent(boat))
 	}
 
 	//split userinput
