@@ -25,7 +25,7 @@ func ChangeState(userinput string) {
 	var numchar = len(strings.Fields(userinput))
 
 	if numchar != 5 {
-		fmt.Println("Du må skrive inn 5 ord. Skriv 'help' for hjelp.")
+		fmt.Println("Du må skrive inn 5 ord. Skriv 'hjelp' for hjelp.")
 		return
 	}
 
@@ -90,7 +90,8 @@ func ChangeState(userinput string) {
 }
 
 func main() {
-	fmt.Println("#######################################################################################################\n#                                VELKOMMEN TIL RIVERCROSSING!                                         #\n#                                                                                                     #\n# Målet med spillet er å flytte alle fra venstre til høyre med kommandoer.                            #\n#                                                                                                     #\n# Du kan skrive f.eks 'Kylling fra venstre til båt' for å flytte kylling fra venstre side oppi båten. #\n#                                                                                                     #\n# Du kan ikke flytte ting fra venstre til høyre uten å være innom båten.                              #\n# Så kommandoen 'Mann fra venstre til høyre' vil være ugyldig.                                        #\n#                                                                                                     #\n# Du kan alltid skrive 'help' for hjelp eller 'state' for nåværende tilstand.                         #\n#                                                                                                     #\n#                          Dagens sitat: '" + myqoute.GetQuote() + "'                                 #\n#######################################################################################################")
+	var helpmsg = ("#######################################################################################################\n#                                VELKOMMEN TIL RIVERCROSSING!                                         #\n#                                                                                                     #\n# Målet med spillet er å flytte alle fra venstre til høyre med kommandoer.                            #\n#                                                                                                     #\n# Du kan skrive f.eks 'Kylling fra venstre til båt' for å flytte kylling fra venstre side oppi båten. #\n#                                                                                                     #\n# Du kan ikke flytte ting fra venstre til høyre uten å være innom båten.                              #\n# Så kommandoen 'Mann fra venstre til høyre' vil være ugyldig.                                        #\n#                                                                                                     #\n# Du kan alltid skrive 'hjelp' for hjelp eller 'state' for nåværende tilstand.                         #\n#                                                                                                     #\n#                          Dagens sitat: '" + myqoute.GetQuote() + "'                    #\n#######################################################################################################")
+	fmt.Println(helpmsg)
 	fmt.Println(state.ViewState(left_shore, right_shore, boat))
 
 	userinput := bufio.NewScanner(os.Stdin)
@@ -98,8 +99,8 @@ func main() {
 		fmt.Print("\nHva vil du gjøre? \n") // reads user input until \n by default
 		userinput.Scan()                    // Holds the string that was scanned
 		text := userinput.Text()
-		if text == "help" {
-			fmt.Println("########################################################### \n# Målet med spillet er å flytte alle fra venstre til høyre med kommandoer. \n#\n# Du kan skrive f.eks 'Kylling fra venstre til båt' for å flytte kylling fra venstre side oppi båten. \n# \n# Du kan ikke flytte ting fra venstre til høyre uten å være innom båten. Så kommandoen 'Mann fra venstre til høyre' vil være ugyldig. \n#\n# Du kan alltid skrive 'help' for hjelp eller 'state' for nåværende tilstand. \n###########################################################")
+		if text == "hjelp" {
+			fmt.Println(helpmsg)
 		} else if text == "state" {
 			state.ViewState(left_shore, right_shore, boat)
 		} else {
@@ -107,7 +108,7 @@ func main() {
 				//fmt.Println(text)
 				ChangeState(text)
 			} else {
-				fmt.Println("Du må skrive noe! Du kan skrive 'Kylling fra venstre til båt' eller 'Kylling fra båt til venstre'. Skriv 'help' for hjelp.")
+				fmt.Println("Du må skrive noe! Du kan skrive 'Kylling fra venstre til båt' eller 'Kylling fra båt til venstre'. Skriv 'hjelp' for hjelp.")
 			}
 		}
 
