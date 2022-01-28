@@ -3,9 +3,9 @@ module github.com/theodoruia/rivercrossing
 go 1.17
 
 require (
-	github.com/theodoruia/myqoute v1.1.1
-	github.com/theodoruia/rivercrossing/addremove v0.0.0-20220128111331-d66d1af0bead
-	github.com/theodoruia/rivercrossing/state v0.0.0-20220128111331-d66d1af0bead
+	github.com/theodoruia/myqoute v1.1.3
+	github.com/theodoruia/rivercrossing/addremove v0.0.0-20220128114940-60fc3161d22d
+	github.com/theodoruia/rivercrossing/state v0.0.0-20220128114940-60fc3161d22d
 )
 
 require (
