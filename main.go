@@ -26,18 +26,19 @@ func ChangeState(userinput string) {
 	//setter brukerinput til små bokstaver
 	userinput = strings.ToLower(userinput)
 
-	var numchar = len(strings.Fields(userinput))
+	numchar := len(strings.Fields(userinput))
 
 	if numchar != 5 {
 		fmt.Println("Du må skrive inn 5 ord. Skriv 'hjelp' for hjelp.")
 		return
 	}
 	//split userinput
-	split := strings.Split(userinput, " ")
-	var item = split[0]
-	var source = split[2]
-	var target = split[4]
-	var currentState = source + " " + target
+	//Kylling fra venstre til båt
+	splittetSetning := strings.Split(userinput, " ")
+	item := splittetSetning[0]   //kylling
+	source := splittetSetning[2] //venstre
+	target := splittetSetning[4] //båt
+	currentState := source + " " + target
 
 	//sjekker om båten er tom eller ei
 	if target == "båt" && state.IsBoatEmpty(boat) == false {
@@ -60,7 +61,7 @@ func ChangeState(userinput string) {
 			state.PrintState(left_shore, right_shore, boat)
 			return
 		} else {
-			fmt.Println(item + " er ikke til " + source + "..")
+			fmt.Println(item + " er ikke i " + source + "..")
 			return
 		}
 	case "båt venstre": //source target
@@ -72,7 +73,7 @@ func ChangeState(userinput string) {
 			return
 
 		} else {
-			fmt.Println(item + " er ikke til " + source + "..")
+			fmt.Println(item + " er ikke i " + source + "..")
 			return
 		}
 	case "båt høyre": //source target
@@ -84,7 +85,7 @@ func ChangeState(userinput string) {
 			return
 
 		} else {
-			fmt.Println(item + " er ikke til " + source + "..")
+			fmt.Println(item + " er ikke i " + source + "..")
 			return
 		}
 	case "høyre båt": //source target
@@ -96,7 +97,7 @@ func ChangeState(userinput string) {
 			return
 
 		} else {
-			fmt.Println(item + " er ikke til " + source + "..")
+			fmt.Println(item + " er ikke i " + source + "..")
 			return
 		}
 	case "venstre høyre": //source target
