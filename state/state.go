@@ -12,7 +12,7 @@ func PrintState(left []string, right []string, boat []string) string {
 
 	var statemsg = ("#########################################################################################################\n#                                                                                                     #\n#  Venstre: " + left_string + "                   Båt: \"" + boat_string + "/       Høyre: " + right_string + "\n#                                                                                                     #\n#######################################################################################################")
 
-	fmt.Println("\nNåværende tilstand:")
+	fmt.Println("\nNåværende tilstand er:")
 
 	fmt.Println(statemsg)
 	return ""
