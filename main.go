@@ -8,7 +8,6 @@ import (
 
 	"github.com/theodoruia/myquote"
 	"github.com/theodoruia/rivercrossing/addremove"
-	"github.com/theodoruia/rivercrossing/color"
 	"github.com/theodoruia/rivercrossing/state"
 )
 
@@ -43,7 +42,7 @@ func ChangeState(userinput string) {
 	//sjekker om båten er tom eller ei
 	if target == "båt" && state.IsBoatFull(boat) == false {
 		fmt.Println(state.PrintState(left_shore, right_shore, boat))
-		fmt.Println(color.Red + "Båten er full. Båten må laste av før du kan laste mer.")
+		fmt.Println("Båten er full. Båten må laste av før du kan laste mer.")
 		return
 	}
 
@@ -62,10 +61,10 @@ func ChangeState(userinput string) {
 
 			//Sjekker status
 			if state.CheckWin(left_shore, boat) {
-				fmt.Println("Gratulerer! Du har vunnet!")
+				fmt.Println("\n\n ###########  GRATULERER!!! DU HAR VUNNET!!!   ###########\n\n")
 				return
 			}
-			if state.CheckLose(left_shore, boat, chicken, fox, grain) {
+			if state.CheckLose(left_shore, boat, right_shore, chicken, fox, grain) {
 				fmt.Println(state.PrintState(left_shore, right_shore, boat))
 				left_shore = []string{chicken, fox, grain, hs}
 				right_shore = []string{}
@@ -89,10 +88,10 @@ func ChangeState(userinput string) {
 
 			//Sjekker status
 			if state.CheckWin(left_shore, boat) {
-				fmt.Println("Gratulerer! Du har vunnet!")
+				fmt.Println("\n\n ###########  GRATULERER!!! DU HAR VUNNET!!!   ###########\n\n")
 				return
 			}
-			if state.CheckLose(left_shore, boat, chicken, fox, grain) {
+			if state.CheckLose(left_shore, boat, right_shore, chicken, fox, grain) {
 				fmt.Println(state.PrintState(left_shore, right_shore, boat))
 				left_shore = []string{chicken, fox, grain, hs}
 				right_shore = []string{}
@@ -117,10 +116,10 @@ func ChangeState(userinput string) {
 
 			//Sjekker status
 			if state.CheckWin(left_shore, boat) {
-				fmt.Println("Gratulerer! Du har vunnet!")
+				fmt.Println("\n\n ###########  GRATULERER!!! DU HAR VUNNET!!!   ###########\n\n")
 				return
 			}
-			if state.CheckLose(left_shore, boat, chicken, fox, grain) {
+			if state.CheckLose(left_shore, boat, right_shore, chicken, fox, grain) {
 				fmt.Println(state.PrintState(left_shore, right_shore, boat))
 				left_shore = []string{chicken, fox, grain, hs}
 				right_shore = []string{}
@@ -145,10 +144,11 @@ func ChangeState(userinput string) {
 
 			//Sjekker status
 			if state.CheckWin(left_shore, boat) {
-				fmt.Println("Gratulerer! Du har vunnet!")
+				fmt.Println("\n\n ###########  GRATULERER!!! DU HAR VUNNET!!!   ###########\n\n")
+				bufio.NewReader(os.Stdin).ReadBytes('\n')
 				return
 			}
-			if state.CheckLose(left_shore, boat, chicken, fox, grain) {
+			if state.CheckLose(left_shore, boat, right_shore, chicken, fox, grain) {
 				fmt.Println(state.PrintState(left_shore, right_shore, boat))
 				left_shore = []string{chicken, fox, grain, hs}
 				right_shore = []string{}

@@ -30,7 +30,7 @@ func CheckWin(left_shore []string, boat []string) bool {
 	}
 	return false
 }
-func CheckLose(left_shore []string, boat []string, chicken string, fox string, grain string) bool {
+func CheckLose(left_shore []string, boat []string, right_shore []string, chicken string, fox string, grain string) bool {
 	//Sjekker om venstre eller båt har to "items" i seg
 	if addremove.Contains(left_shore, chicken) && addremove.Contains(left_shore, fox) {
 		return true
@@ -38,10 +38,16 @@ func CheckLose(left_shore []string, boat []string, chicken string, fox string, g
 	if addremove.Contains(boat, chicken) && addremove.Contains(boat, fox) {
 		return true
 	}
+	if addremove.Contains(right_shore, chicken) && addremove.Contains(right_shore, fox) {
+		return true
+	}
 	if addremove.Contains(left_shore, chicken) && addremove.Contains(left_shore, grain) {
 		return true
 	}
 	if addremove.Contains(boat, chicken) && addremove.Contains(boat, grain) {
+		return true
+	}
+	if addremove.Contains(right_shore, chicken) && addremove.Contains(right_shore, grain) {
 		return true
 	}
 	return false
