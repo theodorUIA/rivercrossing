@@ -1,7 +1,6 @@
 package state
 
 import (
-	"fmt"
 	"strings"
 )
 
@@ -10,12 +9,9 @@ func PrintState(left []string, right []string, boat []string) string {
 	right_string := strings.Join(right, ", ")
 	boat_string := strings.Join(boat, "")
 
-	var statemsg = ("#########################################################################################################\n#                                                                                                     #\n#  Venstre: " + left_string + "                   Båt: \"" + boat_string + "/       Høyre: " + right_string + "\n#                                                                                                     #\n#######################################################################################################")
+	var statemsg = ("\nNåværende tilstand er: \n#########################################################################################################\n#                                                                                                     #\n#  Venstre: " + left_string + "                   Båt: \"" + boat_string + "/       Høyre: " + right_string + "\n#                                                                                                     #\n#######################################################################################################")
 
-	fmt.Println("\nNåværende tilstand er:")
-
-	fmt.Println(statemsg)
-	return ""
+	return statemsg
 }
 
 func IsBoatEmpty(boat []string) bool {
