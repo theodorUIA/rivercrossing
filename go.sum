@@ -1,9 +1,9 @@
-github.com/theodoruia/myqoute v0.0.0-20220125202513-1f323cd4636c h1:INAJ/tPdDEtg4r/NOkZHopqeHCTxXWCb2tq1DIJMKmo=
-github.com/theodoruia/myqoute v0.0.0-20220125202513-1f323cd4636c/go.mod h1:lbPYKD7C+85SkxcGkwXKwbTfV7Vh7McvHhSOn6kXUqU=
-github.com/theodoruia/rivercrossing/addremove v0.0.0-20220125214359-bd4552ea93a1 h1:JOsiD59n5fhsJffJnyQiw4rcR6XKDjs+J7SVgLbDJGk=
-github.com/theodoruia/rivercrossing/addremove v0.0.0-20220125214359-bd4552ea93a1/go.mod h1:9EhAqMhhQF6a8yuliF1ZogZIiUxldD6K4DOuFgiJFmc=
-github.com/theodoruia/rivercrossing/state v0.0.0-20220125214359-bd4552ea93a1 h1:3zxVYrTu2iEm5/iKlvQGBj+kW7S1+oXiokE7lQ85kb8=
-github.com/theodoruia/rivercrossing/state v0.0.0-20220125214359-bd4552ea93a1/go.mod h1:HF2p+Y4QmArkKBeHImW6InB4qn8/5x7yA28xEQGJjYo=
+github.com/theodoruia/myqoute v1.1.1 h1:iwms0zU+0EehPcfZq+Xj6DLVf4CCHzTcN+cl/b74+74=
+github.com/theodoruia/myqoute v1.1.1/go.mod h1:lbPYKD7C+85SkxcGkwXKwbTfV7Vh7McvHhSOn6kXUqU=
+github.com/theodoruia/rivercrossing/addremove v0.0.0-20220128111331-d66d1af0bead h1:xQZeTID8sk4fVCbh/azL35JO72rGvOARUwVz5kVsm38=
+github.com/theodoruia/rivercrossing/addremove v0.0.0-20220128111331-d66d1af0bead/go.mod h1:9EhAqMhhQF6a8yuliF1ZogZIiUxldD6K4DOuFgiJFmc=
+github.com/theodoruia/rivercrossing/state v0.0.0-20220128111331-d66d1af0bead h1:AhfI16rtanppu7pIigFS/WyYDkoTN4GeTcgTAvXYqYI=
+github.com/theodoruia/rivercrossing/state v0.0.0-20220128111331-d66d1af0bead/go.mod h1:HF2p+Y4QmArkKBeHImW6InB4qn8/5x7yA28xEQGJjYo=
 golang.org/x/text v0.0.0-20170915032832-14c0d48ead0c/go.mod h1:NqM8EUOU14njkJ3fqMW+pc6Ldnwhi/IjpwHt7yyuwOQ=
 golang.org/x/text v0.3.7 h1:olpwvP2KacW1ZWvsR7uQhoyTYvKAupfQrRGBFM352Gk=
 golang.org/x/text v0.3.7/go.mod h1:u+2+/6zg+i71rQMx5EYifcz6MCKuco9NR6JIITiCfzQ=
